@@ -6,7 +6,7 @@ const Files = () => {
     <div className="flex flex-col">
       {data.results.map((res) => {
         return (
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col">
             <File
               id={res.collectionId}
               artworkUrl100={res.artworkUrl100}

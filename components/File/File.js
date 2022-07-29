@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const File = ({
   id,
   artworkUrl100,
@@ -11,11 +9,11 @@ const File = ({
 }) => {
   return (
     <>
-      <div className="flex gap-5" id={id}>
+      <div className="flex gap-5 my-4" id={id}>
         <img src={artworkUrl100}></img>
         <div className="flex flex-col">
           <div className="font-normal text-">{collectionName}</div>
-          <div>{collectionPrice}</div>
+          <div>$ {collectionPrice}</div>
           <div className="flex gap-2">
             <div>Number of tracks: {trackCount}</div>
             <div>Track number: undefined</div>
@@ -24,6 +22,7 @@ const File = ({
           <div>{copyright}</div>
         </div>
       </div>
+      <hr className="w-full border-2 bg-black items-start" />
     </>
   );
 };
