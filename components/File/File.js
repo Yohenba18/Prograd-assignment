@@ -12,7 +12,7 @@ const File = ({
       <div className="flex gap-5 my-4" id={id}>
         <img src={artworkUrl100}></img>
         <div className="flex flex-col">
-          <div className="font-normal text-">{collectionName}</div>
+          <div className="font-bold text-base">{collectionName}</div>
           <div>$ {collectionPrice}</div>
           <div className="flex gap-2">
             <div>Number of tracks: {trackCount}</div>

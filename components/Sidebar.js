@@ -15,7 +15,7 @@ const Sidebar = () => {
         obj[arr[i].primaryGenreName] += 1;
       }
     }
-    return obj
+    return obj;
   };
   const getArtistName = (input) => {
     var arr = input,
@@ -27,19 +27,40 @@ const Sidebar = () => {
         obj[arr[i].artistName] += 1;
       }
     }
-    return obj
+    return obj;
   };
 
   const input = data.results;
-  const obj = getGenre(input)
-  const objArtist = getArtistName(input)
-  console.log(obj)
-  console.log(objArtist)
+  const obj = getGenre(input);
+  const objArtist = getArtistName(input);
+  console.log(obj);
+  console.log(objArtist);
 
   return (
-    <div>
-      <div>Primary Genre Name</div>
-      <div>Artist name</div>
+    <div className="flex flex-col gap-5">
+      <div className="font-bold text-base">Primary Genre Name</div>
+      <div className="flex flex-col">
+        {Object.keys(obj).map((val) => {
+          return (
+            <div className="flex gap-2">
+              {val}
+              {obj[val]}
+              <input type="radio"></input>
+            </div>
+          );
+        })}
+      </div>
+      <div className="font-bold text-base">Artist name</div>
+      <div className="flex flex-col">
+        {Object.keys(objArtist).map((val) => {
+          return (
+            <div>
+              {val}
+              <input type="radio"></input>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
